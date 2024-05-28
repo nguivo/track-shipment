@@ -1,0 +1,15 @@
+{
+    "name": "ngu/track-shipment",
+    "autoload": {
+        "psr-4": {
+            "Ngu\\TrackShipment\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nguivo",
+            "email": "nguivo9@gmail.com"
+        }
+    ],
+    "require": {}
+}

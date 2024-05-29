@@ -2,7 +2,9 @@
     "name": "ngu/track-shipment",
     "autoload": {
         "psr-4": {
-            "Ngu\\TrackShipment\\": "src/"
+            "Ngu\\TrackShipment\\": "src/",
+            "app\\": "app/",
+            "framework\\": "."
         }
     },
     "authors": [

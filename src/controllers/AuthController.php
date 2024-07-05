@@ -39,7 +39,7 @@ class AuthController extends Controller
 
     public function register(Request $request): string
     {
-        $this->setLayout("main");
+        $this->setLayout("auth");
         $user = new User();
 
         if($request->isPost()) {

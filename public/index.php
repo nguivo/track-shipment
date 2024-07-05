@@ -1,7 +1,10 @@
 <?php
 
+use app\controllers\AuthController;
+use app\controllers\SiteController;
 use app\models\User;
 use framework\core\Application;
+use framework\core\UserModel;
 
 require_once dirname(__DIR__)."/vendor/autoload.php";
 
@@ -19,4 +22,16 @@ require_once dirname(__DIR__)."/vendor/autoload.php";
 
     $app = new Application(dirname(__DIR__), $config);
 
-    echo "This is the entry point";
+    $app->router->get('/', [SiteController::class, 'home']);
+    $app->router->post('/', [SiteController::class, 'home']);
+    $app->router->get('/home', [SiteController::class, 'home']);
+    $app->router->post('/home', [SiteController::class, 'home']);
+
+    $app->router->get('/contact', [SiteController::class, 'contact']);
+    $app->router->post('/contact', [SiteController::class, 'contact']);
+
+    $app->router->get('/register', [AuthController::class, 'register']);
+    $app->router->post('/register', [AuthController::class, 'register']);
+
+    $app->run();
+

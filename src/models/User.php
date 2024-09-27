@@ -14,6 +14,7 @@ class User extends UserModel
 
     public string $usr_fname = '';
     public string $usr_lname = '';
+    public string $cmny = '';
     public int $status = self::STATUS_INACTIVE;
     public string $usr_email = '';
     public string $usr_pass = '';
@@ -27,7 +28,7 @@ class User extends UserModel
             'usr_lname' => [self::RULE_REQUIRED, [self::RULE_MAX, 'max' => 30]],
             'usr_email' => [self::RULE_REQUIRED, self::RULE_EMAIL, [self::RULE_UNIQUE, 'class' => self::class]],
             'usr_pass' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 6]],
-            'rpass' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'pass']],
+            'rpass' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'usr_pass']],
         ];
     }
 
@@ -37,6 +38,7 @@ class User extends UserModel
         return [
             'usr_fname' => 'First Name',
             'usr_lname' => 'Last Name',
+            'cmny' => 'Company',
             'usr_email' => 'Email',
             'usr_pass' => 'Password',
             'rpass' => 'Confirm Password'
